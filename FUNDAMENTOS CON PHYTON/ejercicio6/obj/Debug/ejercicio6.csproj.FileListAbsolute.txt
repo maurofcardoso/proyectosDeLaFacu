@@ -1,0 +1,18 @@
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\bin\Debug\ejercicio6.exe.config
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\bin\Debug\ejercicio6.exe
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\bin\Debug\ejercicio6.pdb
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\obj\Debug\ejercicio6.csprojResolveAssemblyReference.cache
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\obj\Debug\ejercicio6.exe
+C:\Users\Gabriela\Documents\SharpDevelop Projects\teoria2\ejercicio6\obj\Debug\ejercicio6.pdb
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\bin\Debug\ejercicio6.exe.config
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\bin\Debug\ejercicio6.exe
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\bin\Debug\ejercicio6.pdb
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\obj\Debug\ejercicio6.csprojResolveAssemblyReference.cache
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\obj\Debug\ejercicio6.exe
+C:\Users\NOBLEX\Desktop\Algoritmos2021\ejerciciosC#\teoria2\ejercicio6\obj\Debug\ejercicio6.pdb
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\bin\Debug\ejercicio6.exe.config
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\bin\Debug\ejercicio6.exe
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\bin\Debug\ejercicio6.pdb
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\obj\Debug\ejercicio6.csprojResolveAssemblyReference.cache
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\obj\Debug\ejercicio6.exe
+C:\Users\Mauro\Desktop\prueba\clase2-AP\teoria2\ejercicio6\obj\Debug\ejercicio6.pdb

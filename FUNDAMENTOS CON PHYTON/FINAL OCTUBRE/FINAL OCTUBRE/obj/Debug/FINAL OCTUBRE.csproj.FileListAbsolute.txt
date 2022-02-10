@@ -1,0 +1,6 @@
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\obj\Debug\FINAL OCTUBRE.csprojResolveAssemblyReference.cache
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\bin\Debug\FINAL OCTUBRE.exe.config
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\bin\Debug\FINAL OCTUBRE.exe
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\bin\Debug\FINAL OCTUBRE.pdb
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\obj\Debug\FINAL OCTUBRE.exe
+C:\Users\Usuario\Downloads\algoritmos y programacion\FINAL OCTUBRE\FINAL OCTUBRE\FINAL OCTUBRE\obj\Debug\FINAL OCTUBRE.pdb
