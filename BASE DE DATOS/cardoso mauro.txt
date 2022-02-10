@@ -1,0 +1,199 @@
+select e.descripcion as nombreEmpresa, v.numero as numeroViaje, v.fechaHoraSalida as fechaSalida, v.numeroUnidad as unidad
+from viaje v inner join empresa e on v.empresaID=e.ID
+where year(v.fechaHoraSalida)=2020 and
+		month(v.fechaHoraSalida)=01 and
+   	 e.descripcion='talp' and
+   	 time(v.fechaHoraSalida) Between '00.00.00' and '12.00.00'
+
+
+select e.descripcion as nombreEmpresa, v.numero as numeroViaje, v.fechaHoraSalida as fechaSalida, count(p.ID) as cantidadPasajeros
+from viaje v inner join empresa e on v.empresaID=e.ID
+				 inner join pasaje p on v.ID=p.viajeID
+where year(v.fechaHoraSalida)=2020 and
+		month(v.fechaHoraSalida)=01 and
+   	 e.descripcion='talp'
+group by v.ID
+order by v.numero desc
+
+
+select em.descripcion as nombreEmpresa, v.numero as numeroViaje, v.fechaHoraSalida as fechaSalida, concat(per.nombre, per.apellido) as chofer
+from viaje v inner join ciudad co on v.ciudadOrigenID=co.ID
+				 inner join ciudad cd on v.ciudadDestinoID=cd.ID
+				 inner join empresa em on v.empresaID=em.ID
+				 inner join persona per on v.choferID=per.ID
+where co.nombre='la plata' and
+		cd.nombre='quilmes'
+
+
+select concat(per.nombre, per.apellido) as pasajero, count(per.ID) as cantidad
+from viaje v inner join pasaje p on v.ID=p.viajeID
+				  inner join persona per on p.pasajeroID=per.ID
+where year(v.fechaHoraSalida)=2020
+group by per.ID
+
+
+select concat(per.nombre, per.apellido) as pasajero, year(v.fechaHoraSalida) as año, count(per.ID) as cantidad
+from viaje v inner join pasaje p on v.ID=p.viajeID
+				  inner join persona per on p.pasajeroID=per.ID
+group by per.ID, year(v.fechaHoraSalida)
+*********************************************************************************************
+insert into ciudad (nombre, codigoPostal)                     
+values ('quilmes', '190');
+
+insert into ciudad (nombre, codigoPostal)                     
+values ('san isidro', '1400');
+
+insert into ciudad (nombre, codigoPostal)                     
+values ('florencio varela', '1200');
+
+
+
+insert into empresa (descripcion)                     
+values ('pepito');
+
+insert into empresa (descripcion)                     
+values ('sultanito');
+
+insert into empresa (descripcion)                     
+values ('fulanito');
+
+
+insert into servicioTipo (descripcion)                     
+values ('cama');
+
+insert into servicioTipo (descripcion)                     
+values ('semi');
+
+insert into servicioTipo (descripcion)                     
+values ('vip');
+
+
+
+insert into persona (nombre, apellido, dni)                     
+values ('mauro', 'cardoso', 31282983);
+
+insert into persona (nombre, apellido, dni)                     
+values ('fernando', 'cardoso', 31282983);
+
+insert into persona (nombre, apellido, dni)                     
+values ('vanina', 'gomez', 31282983);
+
+insert into persona (nombre, apellido, dni)                     
+values ('yamila', 'francia', 31282983);
+
+
+insert into viaje (numero, fechaHoraSalida, fechaHoraLlegada, numeroUnidad, empresaID, ciudadOrigenID, ciudadDestinoID, choferID)
+values (25, '2021-01-29', '2021-02-15', 10, 1, 1, 2, 1);
+
+insert into viaje (numero, fechaHoraSalida, fechaHoraLlegada, numeroUnidad, empresaID, ciudadOrigenID, ciudadDestinoID, choferID)
+values (25, '2021-03-29', '2021-04-29', 15, 2, 2, 3, 2);
+
+insert into viaje (numero, fechaHoraSalida, fechaHoraLlegada, numeroUnidad, empresaID, ciudadOrigenID, ciudadDestinoID, choferID)
+values (25, '2020-05-29', '2021-05-29', 20, 1, 3, 1, 1);
+
+insert into viaje (numero, fechaHoraSalida, fechaHoraLlegada, numeroUnidad, empresaID, ciudadOrigenID, ciudadDestinoID, choferID)
+values (25, '2020-06-29', '2020-07-29', 25, 2, 1, 3, 2);
+
+
+insert into pasaje (codigoBarras, asiento, importe, servicioTipoID, pasajeroID, viajeID)
+values ('2d5ff', 1, 100, 1, 2, 1);
+
+insert into pasaje (codigoBarras, asiento, importe, servicioTipoID, pasajeroID, viajeID)
+values ('2d5f', 2, 150, 1, 1, 1);
+
+insert into pasaje (codigoBarras, asiento, importe, servicioTipoID, pasajeroID, viajeID)
+values ('2d5fff', 3, 200, 2, 3, 2);
+
+insert into pasaje (codigoBarras, asiento, importe, servicioTipoID, pasajeroID, viajeID)
+values ('2d5dff', 4, 250, 3, 2, 3);
+****************************************************************************************
+create database turismo;
+
+use turismo;
+
+create table if not exists servicioTipo (
+	ID int not null auto_increment primary key,
+	descripcion varchar (45) not null
+	);
+
+create table if not exists empresa (
+	ID int not null auto_increment primary key,
+	descripcion varchar (45) not null
+	);
+
+create table if not exists ciudad (
+	ID int not null auto_increment primary key,
+	nombre varchar (45) not null,
+	codigoPostal int not null
+	);
+
+create table if not exists persona (
+	ID int not null auto_increment primary key,
+	nombre varchar (45) not null,
+	apellido varchar (45) not null,
+	dni int not null
+	);
+
+create table if not exists viaje (
+	ID int not null auto_increment primary key,
+	numero int not null,
+	fechaHoraSalida datetime not null,
+	fechaHoraLlegada datetime not null,
+	numeroUnidad int not null,
+	empresaID int not null,
+	ciudadOrigenID int not null,
+	ciudadDestinoID int not null,
+	choferID int not null,
+	index fk_viaje1 (empresaID asc),
+	constraint fk_viaje1
+		foreign key (empresaID)
+		references turismo.empresa (ID)
+		on delete no action
+		on update no action,
+	index fk_viaje2 (ciudadOrigenID asc),
+	constraint fk_viaje2
+		foreign key (ciudadOrigenID)
+		references turismo.ciudad (ID)
+		on delete no action
+		on update no action,
+	index fk_viaje3 (ciudadDestinoID asc),
+	constraint fk_viaje3
+		foreign key (ciudadDestinoID)
+		references turismo.ciudad (ID)
+		on delete no action
+		on update no action,
+	index fk_viaje4 (choferID asc),
+	constraint fk_viaje4
+		foreign key (choferID)
+		references turismo.persona (ID)
+		on delete no action
+		on update no action
+	);
+
+create table if not exists pasaje (
+	ID int not null auto_increment primary key,
+	codigoBarras varchar (45) not null,
+	asiento int not null unique,
+	importe decimal (15.2) not null,
+	servicioTipoID int not null,
+	pasajeroID int not null,
+	viajeID int not null,
+	index fk_pasaje1 (servicioTipoID asc),
+	constraint fk_pasaje1
+		foreign key (servicioTipoID)
+		references turismo.servicioTipo (ID)
+		on delete no action
+		on update no action,
+	index fk_pasaje2 (pasajeroID asc),
+	constraint fk_pasaje2
+		foreign key (pasajeroID)
+		references turismo.persona (ID)
+		on delete no action
+		on update no action,
+	index fk_pasaje3 (viajeID asc),
+	constraint fk_pasaje3
+		foreign key (viajeID)
+		references turismo.viaje (ID)
+		on delete no action
+		on update no action
+	);
