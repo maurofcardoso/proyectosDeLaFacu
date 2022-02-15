@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 5.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodosLosTPJuntos", "TodosLosTPJuntos\TodosLosTPJuntos.csproj", "{FD34C1F1-A462-4EA7-AD4B-09C30CC3EA53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodosLosTPJuntos", "TodosLosTPJuntos.csproj", "{FD34C1F1-A462-4EA7-AD4B-09C30CC3EA53}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
